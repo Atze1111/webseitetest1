@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ihr Kfz-Gutachter</title>
+    
     <style>
         /* Allgemeine Einstellungen */
         body {
@@ -11,7 +12,7 @@
             margin: 0;
             padding: 0;
             color: #fff;
-            background-color: #000; /* Hintergrundfarbe zu Schwarz geändert */
+            background: linear-gradient(to right, #000000, #FFD700); /* Schwarz-Gold Hintergrund */
         }
 
         .container {
@@ -22,14 +23,14 @@
 
         /* Header */
         header {
-            background: #333;
+            background: #000;
             color: white;
             text-align: center;
             padding: 2em 0;
         }
 
         header h1 {
-            font-size: 2.5em;
+            font-size: 3em;
         }
 
         header p {
@@ -39,7 +40,7 @@
         header .btn {
             margin-top: 1em;
             padding: 0.7em 2em;
-            background: #ff9900;
+            background: #FFD700; /* Gold */
             color: white;
             border-radius: 5px;
             text-decoration: none;
@@ -47,7 +48,62 @@
         }
 
         header .btn:hover {
-            background: #ff7700;
+            background: #ffcc00; /* Dunkleres Gold */
+        }
+
+        /* Kundenansprache */
+        .cta-section {
+            background: #222;
+            color: #fff;
+            padding: 3em 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 1em;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 2em;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cta-button {
+            padding: 1em 2em;
+            background: #FFD700;
+            color: #000;
+            border-radius: 5px;
+            font-size: 1.2em;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #ffcc00;
+        }
+
+        .cta-phone {
+            font-size: 1.5em;
+            background: #ff4d4d;
+            color: white;
+            padding: 1em 2em;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-phone:hover {
+            background: #e60000;
         }
 
         /* Navigation */
@@ -56,7 +112,7 @@
             padding: 0;
             display: flex;
             justify-content: center;
-            background: #ff9900;
+            background: #333;
             margin: 0;
         }
 
@@ -71,20 +127,31 @@
         }
 
         /* Leistungen */
+        section#services {
+            padding: 5em 0;
+            background: #222;
+            color: white;
+        }
+
+        section#services h2 {
+            font-size: 2.5em;
+            margin-bottom: 2em;
+        }
+
         .services {
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 20px;
         }
 
         .card {
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: #444;
+            border-radius: 10px;
             padding: 1em;
+            margin: 1em 0;
+            width: 30%;
             text-align: center;
-            width: 300px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         .card img {
@@ -92,20 +159,47 @@
             border-radius: 5px;
         }
 
-        /* Galerie */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
+        .card h5 {
+            font-size: 1.5em;
+            margin-top: 1em;
         }
 
-        .gallery img {
-            max-width: 300px;
-            border-radius: 5px;
+        /* Unsere Partner */
+        section#partners {
+            padding: 5em 0;
+            background: #333;
+            color: white;
+        }
+
+        section#partners h2 {
+            font-size: 2.5em;
+            margin-bottom: 2em;
+        }
+
+        .partners {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .partner {
+            width: 20%;
+            text-align: center;
+        }
+
+        .partner img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         /* Kontaktformular */
+        section#contact {
+            padding: 5em 0;
+            background: #222;
+            color: white;
+        }
+
         form input, form textarea {
             width: 100%;
             padding: 0.7em;
@@ -125,12 +219,11 @@
 
         /* Footer */
         footer {
-            background-color: #333;
+            background: #000;
             color: white;
             text-align: center;
-            padding: 1.5em 0;
+            padding: 1em 0;
         }
-
     </style>
 </head>
 <body>
@@ -138,78 +231,101 @@
     <header>
         <div class="container">
             <h1>Ihr unabhängiger Kfz-Gutachter</h1>
-            <p>Schnell, zuverlässig & kompetent – Wir sind für Sie da!</p>
+            <p>Wir bieten schnelle, zuverlässige und professionelle Gutachten für alle Fahrzeugarten</p>
             <a href="#contact" class="btn">Kontaktieren Sie uns</a>
         </div>
     </header>
+
+    <!-- Kundenansprache Bereich -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Unfall gehabt? Wir begleiten Sie!</h2>
+            <p>Von der Schadensaufnahme bis zur Schadensregulierung stehen wir Ihnen kostenlos zur Seite. Vertrauen Sie auf unsere Expertise – Ihr Fahrzeug ist bei uns in sicheren Händen.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="cta-button">Mehr über unsere Leistungen</a>
+                <a href="tel:+491234567890" class="cta-phone">Soforthilfe: 01234 567890</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#services">Leistungen</a></li>
-            <li><a href="#about">Über uns</a></li>
-            <li><a href="#gallery">Galerie</a></li>
+            <li><a href="#partners">Partner</a></li>
             <li><a href="#contact">Kontakt</a></li>
         </ul>
     </nav>
 
-    <!-- Leistungen -->
-    <section id="services" class="container">
-        <h2>Unsere Leistungen</h2>
-        <div class="services">
-            <div class="card">
-                <img src="images/unfallgutachten.jpg" alt="Unfallgutachten">
-                <h3>Unfallgutachten</h3>
-                <p>Wir erstellen präzise Gutachten für Pkw, Motorrad und Lkw.</p>
-            </div>
-            <div class="card">
-                <img src="images/beratung.jpg" alt="Beratung">
-                <h3>Beratung</h3>
-                <p>Wir helfen Ihnen bei der Schadensregulierung mit Versicherungen.</p>
-            </div>
-            <div class="card">
-                <img src="images/wertgutachten.jpg" alt="Wertgutachten">
-                <h3>Wertgutachten</h3>
-                <p>Ermitteln Sie den aktuellen Wert Ihres Fahrzeugs mit unserem Service.</p>
+    <!-- Unsere Leistungen -->
+    <section id="services">
+        <div class="container">
+            <h2>Unsere Leistungen</h2>
+            <div class="services">
+                <div class="card">
+                    <img src="images/unfallgutachten.jpg" alt="Unfallgutachten">
+                    <h5>Unfallgutachten</h5>
+                    <p>Wir erstellen präzise und rechtsgültige Gutachten für alle Fahrzeugtypen nach einem Unfall.</p>
+                </div>
+                <div class="card">
+                    <img src="images/schadensgutachten.jpg" alt="Schadensgutachten">
+                    <h5>Schadensgutachten</h5>
+                    <p>Wir bewerten den Schaden an Ihrem Fahrzeug und helfen Ihnen bei der Schadensregulierung.</p>
+                </div>
+                <div class="card">
+                    <img src="images/wertgutachten.jpg" alt="Wertgutachten">
+                    <h5>Wertgutachten</h5>
+                    <p>Ermitteln Sie den aktuellen Marktwert Ihres Fahrzeugs mit unserem professionellen Gutachten.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Galerie -->
-    <section id="gallery" class="container">
-        <h2>Galerie</h2>
-        <div class="gallery">
-            <img src="images/fahrzeug1.jpg" alt="Fahrzeug 1">
-            <img src="images/fahrzeug2.jpg" alt="Fahrzeug 2">
-            <img src="images/fahrzeug3.jpg" alt="Fahrzeug 3">
-            <img src="images/werkstatt.jpg" alt="Werkstatt">
+    <!-- Unsere Partner -->
+    <section id="partners">
+        <div class="container">
+            <h2>Unsere Partner</h2>
+            <div class="partners">
+                <div class="partner">
+                    <img src="images/rechtsanwalt.jpg" alt="Rechtsanwalt">
+                    <p>Kompetente Rechtsanwälte zur Unterstützung bei rechtlichen Fragen.</p>
+                </div>
+                <div class="partner">
+                    <img src="images/werkstatt.jpg" alt="Partnerwerkstatt">
+                    <p>Partnerwerkstätten für Reparaturen und Fahrzeugchecks.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Kontakt -->
-    <section id="contact" class="container">
-        <h2>Kontakt</h2>
-        <form>
-            <div>
-                <label for="name">Ihr Name:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="email">Ihre E-Mail-Adresse:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Ihre Nachricht:</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            <button type="submit" class="btn">Nachricht senden</button>
-        </form>
+    <section id="contact">
+        <div class="container">
+            <h2>Kontaktieren Sie uns</h2>
+            <form action="your-form-handler-url" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Ihr Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Ihre E-Mail-Adresse:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Ihre Nachricht:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn">Nachricht senden</button>
+            </form>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>© 2024 Ihr Kfz-Gutachter – Alle Rechte vorbehalten.</p>
     </footer>
+
+    <!-- Bootstrap JS (für interaktive Komponenten wie Navbar) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
